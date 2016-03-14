@@ -64,7 +64,7 @@ server.put('/api/todos/:id', function(req, res){
     completed: completed
   };
   Todo.findOneAndUpdate({_id: id}, update, function(err, todo){
-    if(err) throw err;
+    if(err) res.redirect('/');
 
     res.json(todo);
   });
